@@ -1,0 +1,298 @@
+/* ============================= */
+/* Base Reset */
+/* ============================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  background: #f8fafc;
+  color: #0f1724;
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================= */
+/* Typography */
+/* ============================= */
+
+header h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: #6b7280;
+}
+
+code {
+  background: #f1f5f9;
+  color: #111827;
+  padding: 0.2em 0.5em;
+  border-radius: 6px;
+  font-size: 0.85em;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+
+/* ============================= */
+/* Status Badge */
+/* ============================= */
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.status--checking {
+  background: #eef2ff;
+  color: #6b7280;
+}
+
+.status--supported {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.status--polyfill {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.status--unsupported {
+  background: #fff1f2;
+  color: #dc2626;
+}
+
+/* ============================= */
+/* Form Elements */
+/* ============================= */
+
+input[type="text"],
+textarea,
+select {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f1724;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  outline: none;
+}
+
+/* ============================= */
+/* Priority Buttons */
+/* ============================= */
+
+.priority-btn {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.priority-btn:hover {
+  background: #f9fafb;
+}
+
+.priority-btn.active,
+.priority-btn[aria-pressed="true"] {
+  background: #eef2ff;
+  border-color: #6366f1;
+  color: #3730a3;
+  font-weight: 600;
+}
+
+/* ============================= */
+/* Buttons */
+/* ============================= */
+
+button {
+  transition: all 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================= */
+/* Todos */
+/* ============================= */
+
+.todos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.todo-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+  transition: all 0.2s ease;
+}
+
+.todo-card:hover {
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.08);
+}
+
+.todo-card.completed {
+  background: #f9fafb;
+}
+
+.todo-card.completed .todo-title {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.todo-card .todo-body {
+  flex: 1;
+}
+
+.todo-title {
+  font-weight: 600;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.complete-checkbox {
+  margin: 0;
+  accent-color: #6366f1;
+}
+
+.todo-content {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.todo-meta {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.4rem;
+}
+
+/* Priority Tag */
+.todo-tag {
+  font-size: 0.7rem;
+  padding: 0.2em 0.6em;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  margin-left: 0.5rem;
+  font-weight: 500;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: none;
+  border: 1px solid #e5e7eb;
+  color: #9ca3af;
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  border-color: #fecaca;
+  color: #ef4444;
+  background: #fff5f5;
+}
+
+/* Empty State */
+.empty-state {
+  color: #9ca3af;
+  font-style: italic;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* ============================= */
+/* Tool Log (Sidebar Console Style) */
+/* ============================= */
+
+.tool-log {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 1rem;
+  height: 600px;
+  overflow-y: auto;
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.8rem;
+  color: #38bdf8;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.log-entry {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+.log-time {
+  color: #64748b;
+  margin-right: 0.5rem;
+}
+
+.log-tool {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.log-result {
+  color: #22c55e;
+}
+
+.log-error {
+  color: #f87171;
+}
+
+/* ============================= */
+/* Footer */
+/* ============================= */
+
+footer {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+footer p + p {
+  margin-top: 0.4rem;
+}
