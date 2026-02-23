@@ -1,4 +1,4 @@
-# WebMCP Demo app
+# WebMCP Demo
 
 ![Demo Screenshot](docs/webmcp1.png)
 
